@@ -1,0 +1,58 @@
+
+.side--drawer {
+  background: white;
+  min-width: 278px;
+  flex-basis: 278px;
+  border-right: 1px solid #e0e0e0;
+  position: fixed;
+  height: 100%;
+  transition: 0.2s;
+  z-index: 33;
+  padding-top: 10px;
+}
+
+
+.side--drawer-items {
+  height: 100%;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+
+
+.side--drawer-items > li {
+  padding: 20px;
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.side--drawer-items > li:first-child {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.side--drawer-items > li:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+  color: rebeccapurple;
+}
+
+.side--drawer-items > li:hover svg {
+  fill: rebeccapurple;
+}
+
+
+.side--drawer-icon-wrap{
+  width: 24px;
+  height: 24px;
+}
+
+.side--drawer-icon-wrap svg {
+  fill: #828282;
+}
+
+.side--drawer-icon-wrap + p {
+  flex-grow: 1;
+  margin-left: 25px;
+}
