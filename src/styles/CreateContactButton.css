@@ -1,0 +1,12 @@
+.new--contact--btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #e91e63;
+  color: white;
+  box-shadow: 0 6px 15px #838181;
+}
