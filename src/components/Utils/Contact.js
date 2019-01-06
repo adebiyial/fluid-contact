@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 // import me from '../assets/icons/me.jpg';
 
 class Contact extends Component {
+
+  handleClick = () => {
+    this.props.clicked(true, 'view-contact-modal');
+    this.props.viewContact(this.props.contactId);
+  }
+
   render() {
-    const { firstName, lastName, company, jobTitle, email, phone, notes } = this.props;
+    const { firstName, lastName, email, phone } = this.props;
     const imgSrc = `https://robohash.org/${phone}`
     return (
       <li>
@@ -12,9 +18,9 @@ class Contact extends Component {
             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
           </svg>
         </div>
-        <div className="user-detail">
+        <div className="user-detail" role='button' onClick={this.handleClick}>
           <div className="user--profile-img">
-            <img src={imgSrc} alt="user small img" />
+            <img src={imgSrc} alt="user img" />
             <div className="utils-check">
               <svg focusable="false" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" >
                 <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />

@@ -6,7 +6,6 @@ import '../styles/CreateContactButton.css'
 class CreateContactButton extends Component {
 
   handleClick = () => {
-    console.log("clicked")
     this.props.clicked(true, 'create-new-contact-modal');
   }
 

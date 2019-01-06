@@ -34,7 +34,7 @@ const NavBar = () => {
     </div>
     <div className="nav--bar__right">
       <div className="user--profile-img">
-        <img src={me} alt="user profile img" />
+        <img src="https://robohash.org/GPR.png?set=set1&size=150x150" alt="user profile img" />
       </div>
     </div>
   </header>

@@ -19,15 +19,12 @@ class App extends Component {
     showModal: false,
     modalToShow: '',
     renderNotification: false,
-    notificationMessage: ''
+    notificationMessage: '',
+    viewContactId: ''
   }
 
   displayModal = (showModal: false, modalToShow: '') => {
-    // 1. check if a modal has been triggered
     this.setState({showModal, modalToShow});
-    // 2. get which modal and display it.
-    console.log("display modal: ", modalToShow);
-    // this.renderModal(modalToShow);
   }
 
   renderModal = () => {
@@ -40,18 +37,12 @@ class App extends Component {
     }
     
     if(modalToShow === 'create-new-contact-modal') {
-      console.clear();
-      console.log("Render Create New Contact Modal");
       modalToRender = <CreateNewContactModal hideModal={this.hideModal} notificationMessage={this.getNotificationMessage}/>
     }
     if(modalToShow === 'view-contact-modal') {
-      console.clear();
-      console.log("Render View Contact Modal");
-      modalToRender = <ViewContactModal />
+      modalToRender = <ViewContactModal hideModal={this.hideModal} contactId={this.state.viewContactId}/>
     }
     if(modalToShow === 'edit-contact-modal') {
-      console.clear();
-      console.log("Render Edit Contact Modal");
       modalToRender = <EditContactModal />
     }
 
@@ -65,6 +56,10 @@ class App extends Component {
   getNotificationMessage = (notificationMessage) => {
     this.setState({notificationMessage})
   }
+
+  viewContact = (contactId) => {
+    this.setState({viewContactId: contactId});
+  }
   
   
   render() {
@@ -77,7 +72,7 @@ class App extends Component {
           <NavBar />
           <main>
           <SideDrawer />
-          <ContactList />
+          <ContactList clicked={displayModal} viewContact={this.viewContact} />
           </main>
           <section>
           <CreateContactButton clicked={displayModal}/>

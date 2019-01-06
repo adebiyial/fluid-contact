@@ -1,27 +1,23 @@
 .overlay {
-    transition: opacity .15s cubic-bezier(0.4,0.0,0.2,1) .15s;
-    background-color: rgba(0,0,0,0.502);
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
+  transition: opacity .15s cubic-bezier(0.4, 0.0, 0.2, 1) .15s;
+  background-color: rgba(0, 0, 0, 0.502);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
 }
 
 .overlay-active {
-    transition: opacity .05s cubic-bezier(0.4,0.0,0.2,1);
-    z-index: 300;
-    opacity: 1;
+  transition: opacity .05s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 300;
+  opacity: 1;
 }
-
-
-/* 000000000000000000000000000000 */
-
 
 .modal-header {
   background: #e3e3e3;
@@ -75,9 +71,6 @@
   margin-right: 20px;
 }
 
-/* create contact modal */
-
-
 .modal-info-section form {
   display: grid;
   grid-gap: 20px;
@@ -90,9 +83,12 @@
 }
 
 .modal-info-section form input {
-  text-transform: capitalize;
   border: none;
   border-bottom: 1px solid lightgray;
+}
+
+input::first-letter {
+  text-transform: uppercase;
 }
 
 .modal-icon {
@@ -105,7 +101,6 @@
   display: flex;
   justify-content: flex-end;
   text-align: right;
-  padding: 10px;
 }
 
 .modal-footer button {
@@ -130,8 +125,6 @@
   grid-column: 2/-1;
 }
 
-/* edit contsct */
-
 button {
   cursor: pointer;
   padding: 10px 15px;
@@ -142,7 +135,7 @@ button {
   color: #1a73e8;
 }
 
-button:hover {
+form button:hover {
   background: #7f7f7f24;
 }
 
@@ -150,12 +143,10 @@ button:hover {
   background: aliceblue;
 }
 
-
-/* refactoring */
 .ccm, .ecm, .vcm {
   background: #fff;
   min-width: 700px;
-  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
   border-radius: 7px;
   z-index: 400;
 }

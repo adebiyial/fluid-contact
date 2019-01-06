@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ContactsConsumer } from '../contexts/ContactContext';
+import { ContactsConsumer, ContactsContext } from '../contexts/ContactContext';
 import Contact from './Utils/Contact';
 import '../styles/ContactList.css'
 
@@ -8,13 +8,18 @@ class ContactList extends Component {
     starredContacts: [],
     allContacts: []
   }
+
+  componentWillMount() {
+    const allContacts = JSON.parse(localStorage.getItem('allContacts'));
+    this.context.allContacts = allContacts === null ? [] : allContacts;
+  }
+
   render() {
     return (
       <ContactsConsumer>
         {
           value => {
-            console.log(value);
-            const { allContacts } = value;
+            const { allContacts  } = value;
             return (
               <div className="contacts">
                 <div className="starred--contacts">
@@ -33,8 +38,10 @@ class ContactList extends Component {
                     {
                       allContacts.map(contact => {
                         return (
-                          <Contact key={contact.phone} firstName={contact.firstName} lastName={contact.lastName} company="Google"
-                              jobTitle="Head of VR" email={contact.email} phone={contact.phone} notes="find him"  />
+                          <Contact key={contact.phone} firstName={contact.firstName} lastName={contact.lastName}
+                          company="Google" jobTitle="Head of VR" email={contact.email}
+                          phone={contact.phone} notes="find him" clicked={this.props.clicked}
+                          viewContact={this.props.viewContact} contactId={contact.contactId}/>
                         )
                       })
                     }
@@ -48,5 +55,6 @@ class ContactList extends Component {
     )
   }
 }
+ContactList.contextType = ContactsContext;
 
 export default ContactList;

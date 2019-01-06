@@ -50,3 +50,4 @@ class ContactsProvider extends Component {
 
 export default ContactsProvider;
 export const ContactsConsumer = ContactsContext.Consumer;
+export { ContactsContext };
