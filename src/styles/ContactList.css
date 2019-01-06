@@ -1,4 +1,3 @@
-
 .contacts {
   width: 100%;
   padding: 20px;
@@ -23,8 +22,7 @@
   margin-bottom: 20px;
 }
 
-.starred--contacts--list,
-.contacts--list {
+.starred--contacts--list, .contacts--list {
   list-style: none;
   display: grid;
   grid-auto-rows: 50px;
@@ -42,14 +40,13 @@
   align-items: center;
 }
 
-.starred--contacts--list > li:first-child svg {
+.starred--contacts--list>li:first-child svg {
   fill: #e91e63;
 }
 
 .user-detail {
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr auto;
-  grid-gap: 30px;
   align-items: center;
   font-weight: 500;
   padding: 10px;
@@ -68,16 +65,20 @@
   cursor: pointer;
 }
 
-/* list------------------- */
-
 .utils {
   visibility: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .user-detail:hover .utils {
   visibility: visible;
 }
 
+.util-icon-right>svg {
+  margin: 0 10px;
+}
 
 .user--profile-img {
   position: relative;
@@ -85,7 +86,6 @@
 
 .utils-check {
   position: absolute;
-  /* z-index: -1; */
   transition: 0.2s;
   height: 100%;
   width: 100%;
@@ -96,17 +96,14 @@
 }
 
 .user-detail:hover .user--profile-img img {
-  /* visibility: hidden; */
   opacity: 0;
   transition: 0.1s;
 }
 
 .user-detail:hover .utils-check {
-  /* z-index: 1; */
   opacity: 1;
 }
 
 .utils-check:hover svg {
   fill: rebeccapurple;
-  cursor: crosshair;
 }

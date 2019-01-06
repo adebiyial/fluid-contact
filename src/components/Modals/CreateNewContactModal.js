@@ -16,18 +16,18 @@ class CreateNewContactModal extends Component {
 
   handleSubmit = (e, value) => {
     e.preventDefault();
-    console.log("form submitted");
-    console.log(value);
 
     const { allContacts, dispatch } = value;
     const { firstName, lastName, company, jobTitle, email, phone, notes } = this.state;
-
     const newContact = {
-      contactId: 'unique id',
+      contactId: `contact${Date.now()}`,
       ...this.state
     }
 
     allContacts.push(newContact);
+    console.log(allContacts);
+    // add contacts to local storage
+    localStorage.setItem('allContacts', JSON.stringify(allContacts));
 
     dispatch({
       type: 'CREATE_NEW_CONTACT',
@@ -92,7 +92,7 @@ class CreateNewContactModal extends Component {
                     <input type="text" name="notes" placeholder="notes" onChange={this.handleChange} />
                   </label>
                   <footer className="modal-footer">
-                    <a className='cancel' onClick={this.handleClick}>cancel</a>
+                    <button className='cancel' type="button" onClick={this.handleClick}>cancel</button>
                     <button className='save' type="submit">save</button>
                   </footer>
                 </form>
