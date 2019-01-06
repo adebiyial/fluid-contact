@@ -95,14 +95,13 @@ input::first-letter {
 
 .util-icons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
 }
 
 .modal-icon {
   width: 24px;
   height: 24px;
-  background: #000;
 }
 
 .modal-footer {

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { ContactsConsumer } from '../../contexts/ContactContext';
+import email from '../../assets/icons/email.svg';
+import phone from '../../assets/icons/phone.svg';
+import company from '../../assets/icons/company.svg';
 
 class CreateNewContactModal extends Component {
 
@@ -70,25 +73,35 @@ class CreateNewContactModal extends Component {
               <section className="modal-info-section">
                 <form onSubmit={(e) => this.handleSubmit(e, value)}>
                   <label htmlFor="name" className="name">
-                    <div className="modal-icon"></div>
+                    <div className="modal-icon">
+                      <img src={email} alt="person icon"/>
+                    </div>
                     <input type="text" name="firstName" placeholder="first name" onChange={this.handleChange} />
                     <input type="text" name="lastName" placeholder="last name" onChange={this.handleChange} />
                   </label>
                   <label htmlFor="job" className="job">
-                    <div className="modal-icon"></div>
+                    <div className="modal-icon">
+                      <img src={company} alt="company icon"/>
+                    </div>
                     <input type="text" name="company" placeholder="company" onChange={this.handleChange} />
                     <input type="text" name="jobTitle" placeholder="job title" onChange={this.handleChange} />
                   </label>
                   <label htmlFor="email" className="email">
-                    <div className="modal-icon"></div>
+                    <div className="modal-icon">
+                    <img src={email} alt="email icon"/>
+                    </div>
                     <input type="email" name="email" placeholder="email" onChange={this.handleChange} />
                   </label>
                   <label htmlFor="phone" className="phone">
-                    <div className="modal-icon"></div>
+                    <div className="modal-icon">
+                    <img src={phone} alt="phone icon"/>
+                    </div>
                     <input type="phone" name="phone" placeholder="phone" onChange={this.handleChange} />
                   </label>
                   <label htmlFor="notes" className="notes">
-                    <div className="modal-icon"></div>
+                    <div className="modal-icon">
+                    <img src={email} alt="notes icon"/>
+                    </div>
                     <input type="text" name="notes" placeholder="notes" onChange={this.handleChange} />
                   </label>
                   <footer className="modal-footer">
