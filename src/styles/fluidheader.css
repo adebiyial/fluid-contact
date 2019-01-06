@@ -1,0 +1,105 @@
+.nav--bar {
+  display: flex;
+  padding: 8px 20px;
+  justify-content: space-between;
+  color: white;
+  background: var(--fluid-nav-purple, red);
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav--bar>* {
+  height: 50px;
+}
+
+/* 
+  LEFT
+*/
+
+.nav--bar__left {
+  display: flex;
+  align-items: center;
+  min-width: 278px;
+}
+
+.nav--menu__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.app--name {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* 
+ MIDDLE
+*/
+
+.nav--bar__middle {
+  width: 100%;
+  /* margin: 0 40px; */
+}
+
+.nav--bar__form {
+  width: 100%;
+  position: relative;
+}
+
+.nav--bar__search-input {
+  height: 50px;
+  width: 100%;
+  border: none;
+  text-transform: capitalize;
+  font-size: 15px;
+  border-radius: 4px;
+  background: #634caf;
+  color: white;
+  padding-left: 40px;
+  font-weight: 500;
+}
+
+.nav--bar__search-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border: none;
+  fill: white;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+
+/*
+RIGHT	
+*/
+
+.nav--bar__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.user--profile-img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border-radius: 50%;
+}
+
+@media all and (max-width: 600px) {
+  .nav--bar__middle {
+    display: none;
+  }
+}
+
+.nav--bar svg {
+  fill: white;
+}

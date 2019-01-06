@@ -9,4 +9,6 @@
   background: #e91e63;
   color: white;
   box-shadow: 0 6px 15px #838181;
+  cursor: pointer;
+  z-index: 200;
 }
