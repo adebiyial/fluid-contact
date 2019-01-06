@@ -21,6 +21,8 @@ class ViewContactModal extends Component {
             const contactId = this.props.contactId;
             const currentContact = allContacts.find(contact => contact.contactId === contactId);
             const imgSrc = `https://robohash.org/${currentContact.phone}`
+            const mailHref = `mailto:${currentContact.email}`;
+            const phoneHref = `tel:${currentContact.phone}`;
             return (
               <div className="vcm">
                 <header className="modal-header">
@@ -86,7 +88,9 @@ class ViewContactModal extends Component {
                         <div className="modal-icon-wrap">
                         <img src={email} alt="email icon" />
                         </div>
-                        <p>{currentContact.email}</p>
+                        <p>
+                          <a href={mailHref}>{currentContact.email}</a>
+                        </p>
                       </li>
                     }
                     {
@@ -95,7 +99,9 @@ class ViewContactModal extends Component {
                         <div className="modal-icon-wrap">
                           <img src={phone} alt="phone icon" />
                         </div>
-                        <p>{currentContact.phone}</p>
+                        <p>
+                          <a href={phoneHref}>{currentContact.phone}</a>
+                        </p>
                       </li>
                     }
                   </ul>
