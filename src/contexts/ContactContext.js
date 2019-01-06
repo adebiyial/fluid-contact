@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 const ContactsContext = React.createContext({});
 
-
 // reducer
 const ContactsReducer = (state, action) => {
   switch (action.type) {

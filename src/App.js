@@ -23,7 +23,7 @@ class App extends Component {
     viewContactId: ''
   }
 
-  displayModal = (showModal: false, modalToShow: '') => {
+  displayModal = (showModal = false, modalToShow = '') => {
     this.setState({showModal, modalToShow});
   }
 
