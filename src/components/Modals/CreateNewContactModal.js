@@ -32,6 +32,7 @@ class CreateNewContactModal extends Component {
     // add contacts to local storage
     localStorage.setItem('allContacts', JSON.stringify(allContacts));
 
+    // add new contact to global context
     dispatch({
       type: 'CREATE_NEW_CONTACT',
       allContacts,

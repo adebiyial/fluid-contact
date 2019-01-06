@@ -18,6 +18,11 @@ const ContactsReducer = (state, action) => {
         phone: action.phone,
         notes: action.notes
       };
+    case 'STAR_CONTACT':
+      return {
+        ...state,
+        starredContacts: action.starredContacts
+      }
     default:
       return state;
   }

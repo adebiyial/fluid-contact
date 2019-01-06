@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import me from '../assets/icons/me.jpg';
 
-class Contact extends Component {
+class StarredContact extends Component {
 
   handleClick = () => {
     this.props.clicked(true, 'view-contact-modal');
@@ -92,4 +91,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default StarredContact;

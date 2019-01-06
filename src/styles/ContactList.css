@@ -40,8 +40,12 @@
   align-items: center;
 }
 
-.starred--contacts--list>li:first-child svg {
+.starred--contacts--list>li:first-child .icon svg {
   fill: #e91e63;
+}
+
+.starred--contacts--list li:not(:first-child) .icon svg {
+  visibility: hidden;
 }
 
 .user-detail-wrap {
@@ -63,22 +67,22 @@
   text-transform: capitalize;
 }
 
-.contacts .user-detail:hover {
+.contacts .user-detail-wrap:hover {
   background: #f5f5f5;
   cursor: pointer;
 }
 
 .utils {
-  /* visibility: hidden; */
+  visibility: hidden;
   height: 100%;
   display: flex;
   align-items: center;
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 0;
 }
 
-.user-detail:hover .utils {
+.user-detail-wrap:hover .utils {
   visibility: visible;
 }
 
@@ -94,6 +98,7 @@
 
 .user--profile-img {
   position: relative;
+  margin-right: 20px;
 }
 
 .utils-check {
@@ -122,4 +127,16 @@
 
 svg:hover {
   fill: red;
+}
+
+@media screen and (max-width: 1000px) {
+  .contacts {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .user-email {
+    display: none;
+  }
 }
