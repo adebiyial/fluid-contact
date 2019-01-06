@@ -60,19 +60,23 @@ class App extends Component {
   viewContact = (contactId) => {
     this.setState({viewContactId: contactId});
   }
+
+  favContact = (contactId) => {
+    console.log(contactId);
+  }
   
   
   render() {
     const showModalOverlayToggle = this.state.showModal === true ? 'overlay overlay-active' : 'overlay'
     const notificationToggle = this.state.renderNotification === true ? 'notification notification-active' : 'notification'
-    const { displayModal, renderModal, hideModal } = this;
+    const { displayModal, renderModal, hideModal, favContact } = this;
     return (
       <ContactsProvider>
         <div className="fluid-contact">
           <NavBar />
           <main>
           <SideDrawer />
-          <ContactList clicked={displayModal} viewContact={this.viewContact} />
+          <ContactList clicked={displayModal} favClicked={favContact} viewContact={this.viewContact} />
           </main>
           <section>
           <CreateContactButton clicked={displayModal}/>
@@ -85,7 +89,8 @@ class App extends Component {
             </div>
           </section>
 
-          { this.state.renderNotification && <Notification className={notificationToggle} msg={this.state.notificationMessage}/> }
+          { this.state.renderNotification && <Notification className={notificationToggle}
+              msg={this.state.notificationMessage}/> }
         </div>
       </ContactsProvider>
     );

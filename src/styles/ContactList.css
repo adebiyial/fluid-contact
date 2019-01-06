@@ -66,10 +66,12 @@
 }
 
 .utils {
-  visibility: hidden;
+  /* visibility: hidden; */
   height: 100%;
   display: flex;
   align-items: center;
+  position: absolute;
+  right: 0;
 }
 
 .user-detail:hover .utils {
@@ -77,7 +79,7 @@
 }
 
 .util-icon-right>svg {
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .user--profile-img {
@@ -106,4 +108,8 @@
 
 .utils-check:hover svg {
   fill: rebeccapurple;
+}
+
+svg:hover {
+  fill: red;
 }
