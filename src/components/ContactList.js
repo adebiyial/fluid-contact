@@ -41,7 +41,9 @@ class ContactList extends Component {
                           <Contact key={contact.phone} firstName={contact.firstName} lastName={contact.lastName}
                           company="Google" jobTitle="Head of VR" email={contact.email}
                           phone={contact.phone} notes="find him" clicked={this.props.clicked}
-                          viewContact={this.props.viewContact} contactId={contact.contactId}/>
+                          viewContact={this.props.viewContact} contactId={contact.contactId}
+                          favClicked={this.props.favClicked}
+                          />
                         )
                       })
                     }
