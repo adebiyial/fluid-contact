@@ -1,0 +1,18 @@
+.notification {
+  position: fixed;
+  background: #121212;
+  bottom: 0;
+  padding: 20px 30px;
+  z-index: 2222222;
+  left: 50%;
+  color: white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  font-size: 20px;
+  transition: 0.2s;
+  transform: translateX(-50%) translateY(100px);
+}
+
+.notification-active {
+  transform:  translateX(-50%) translateY(0);
+}
