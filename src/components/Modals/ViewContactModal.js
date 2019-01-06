@@ -47,7 +47,7 @@ class ViewContactModal extends Component {
                         <img src={bin} alt='bin icon' title='bin'/>
                       </div>
                       <div>
-                        <img src={close} alt='close icon' title='close'/>
+                        <img type="button" onClick={this.handleClick} src={close} alt='close icon' title='close'/>
                       </div>
                     </div>
                   </div>
@@ -87,9 +87,9 @@ class ViewContactModal extends Component {
                       </li>
                     }
                   </ul>
-                  <footer className="modal-footer">
+                  {/* <footer className="modal-footer">
                     <button className='cancel' type="button" onClick={this.handleClick}>cancel</button>
-                  </footer>
+                  </footer> */}
                 </section>
               </div>
             )
