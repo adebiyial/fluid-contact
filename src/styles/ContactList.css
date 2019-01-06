@@ -1,0 +1,115 @@
+.contacts {
+  width: 100%;
+  padding: 20px;
+  padding-left: 300px;
+  transition: 0.2s;
+  padding-top: 30px;
+}
+
+.contacts header {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.contact--heading {
+  font-weight: 500;
+  color: #616161;
+}
+
+.starred--contacts--list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.starred--contacts--list, .contacts--list {
+  list-style: none;
+  display: grid;
+  grid-auto-rows: 50px;
+  grid-gap: 20px;
+}
+
+.contacts li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.starred--contacts--list>li:first-child svg {
+  fill: #e91e63;
+}
+
+.user-detail {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr auto;
+  align-items: center;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+  position: relative;
+  font-size: 15px;
+}
+
+.user-name {
+  text-transform: capitalize;
+}
+
+.contacts .user-detail:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.utils {
+  /* visibility: hidden; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+.user-detail:hover .utils {
+  visibility: visible;
+}
+
+.util-icon-right>svg {
+  margin: 0 5px;
+}
+
+.user--profile-img {
+  position: relative;
+}
+
+.utils-check {
+  position: absolute;
+  transition: 0.2s;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  justify-content: center;
+}
+
+.user-detail:hover .user--profile-img img {
+  opacity: 0;
+  transition: 0.1s;
+}
+
+.user-detail:hover .utils-check {
+  opacity: 1;
+}
+
+.utils-check:hover svg {
+  fill: rebeccapurple;
+}
+
+svg:hover {
+  fill: red;
+}
