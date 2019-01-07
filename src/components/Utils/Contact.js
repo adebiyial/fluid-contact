@@ -12,7 +12,6 @@ class Contact extends Component {
   }
 
   handleStarContact = () => {
-    console.log('favourite', this.props.contactId);
     this.props.starContact(this.props.contactId);
   }
 
@@ -28,11 +27,6 @@ class Contact extends Component {
   render() {
     const { firstName, lastName, email, phone, contactId, contactInitial } = this.props;
     const imgSrc = `https://robohash.org/${contactId}`;
-    // const { existingInitials }  = this.state;
-    // existingInitials.push(contactInitial);
-    // console.log(existingInitials);
-    // let hideContactInitial = existingInitials.some(initial => initial === contactInitial);
-    // console.log(hideContactInitial);
     return (
       <li data-contact-initial={ contactInitial }>
         <div className="icon">

@@ -5,11 +5,6 @@ import StarredContact from './Utils/StarredContact';
 import '../styles/ContactList.css'
 
 class ContactList extends Component {
-  state = {
-    starredContacts: [],
-    allContacts: [],
-    existingInitials: []
-  }
 
   componentWillMount() {
     const allContacts = JSON.parse(localStorage.getItem('allContacts'));
@@ -20,23 +15,17 @@ class ContactList extends Component {
   }
 
   starContact = (contactId) => {
-    console.log("going ahead to star", contactId);
-    
     const allLocalStorageContacts = JSON.parse(localStorage.getItem('allContacts'));
     const contactToStar = allLocalStorageContacts.find(contact => contact.contactId === contactId);
     const starredContacts = JSON.parse(localStorage.getItem('starredContacts')) || [];
-    console.log(starredContacts instanceof Array);
+
     starredContacts.push(contactToStar);
     localStorage.setItem('starredContacts', JSON.stringify(starredContacts));
-    console.log(this.context);
 
-    // add new contact to global context
     this.context.dispatch({
       type: 'STAR_CONTACT',
       starredContacts
     });
-
-    // DONT;T ALLOW DUPLICATES
   }
 
   sortAllContacts = (allContacts) => {
@@ -83,9 +72,9 @@ class ContactList extends Component {
                       starredContacts.map(contact => {
                         return (
                           <StarredContact key={contact.contactId} firstName={contact.firstName}
-                          lastName={contact.lastName} company="Google"
-                          jobTitle="Head of VR" email={contact.email}
-                          phone={contact.phone} notes="find him" clicked={this.props.clicked}
+                          lastName={contact.lastName} company={contact.company}
+                          jobTitle={contact.jobTitle} email={contact.email}
+                          phone={contact.phone} notes={contact.notes} clicked={this.props.clicked}
                           viewContact={this.props.viewContact} contactId={contact.contactId}
                           starContact={starContact}
                           />
@@ -107,9 +96,9 @@ class ContactList extends Component {
 
                         return (
                           <Contact key={contact.contactId} firstName={contact.firstName}
-                          lastName={contact.lastName} company="Google"
-                          jobTitle="Head of VR" email={contact.email}
-                          phone={contact.phone} notes="find him" clicked={this.props.clicked}
+                          lastName={contact.lastName} company={contact.company}
+                          jobTitle={contact.jobTitle} email={contact.email}
+                          phone={contact.phone} notes={contact.notes} clicked={this.props.clicked}
                           viewContact={this.props.viewContact} contactId={contact.contactId}
                           starContact={starContact} contactInitial={ contactInitial }
                           />

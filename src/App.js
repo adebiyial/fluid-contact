@@ -61,11 +61,6 @@ class App extends Component {
     this.setState({viewContactId: contactId});
   }
 
-  favContact = (contactId) => {
-    console.log(contactId);
-  }
-  
-  
   render() {
     const showModalOverlayToggle = this.state.showModal === true ? 'overlay overlay-active' : 'overlay'
     const notificationToggle = this.state.renderNotification === true ? 'notification notification-active' : 'notification'
