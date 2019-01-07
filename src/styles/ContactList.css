@@ -156,6 +156,12 @@
   .contacts, .emptyContact {
     padding-left: 20px;
   }
+  .emptyContactMsg {
+    max-width: 100%;
+  }
+  .emptyContact .addBtn {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1050px) {
