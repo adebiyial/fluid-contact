@@ -1,9 +1,30 @@
-.contacts {
+.contacts, .emptyContact {
   width: 100%;
   padding: 20px;
   padding-left: 300px;
   transition: 0.2s;
   padding-top: 30px;
+}
+
+.emptyContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.emptyContact .addBtn {
+  background: #e91e63;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.emptyContactMsg {
+  max-width: 50%;
+  line-height: 1.9;
 }
 
 .contacts header {
@@ -31,8 +52,9 @@
 
 .contacts li {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 15px 1fr;
   grid-column-gap: 10px;
+  align-content: center;
 }
 
 .icon {
@@ -40,19 +62,26 @@
   align-items: center;
 }
 
-.starred--contacts--list>li:first-child svg {
+.starred--contacts--list>li:first-child .icon svg {
   fill: #e91e63;
+}
+
+.starred--contacts--list li:not(:first-child) .icon svg {
+  visibility: hidden;
+}
+
+.user-detail-wrap {
+  position: relative;
 }
 
 .user-detail {
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr auto;
+  grid-template-columns: auto 1fr 1fr 1fr;
   align-items: center;
   font-weight: 500;
   padding: 10px;
   border-radius: 5px;
   transition: 0.2s;
-  position: relative;
   font-size: 15px;
 }
 
@@ -60,22 +89,34 @@
   text-transform: capitalize;
 }
 
-.contacts .user-detail:hover {
+.contacts .user-detail-wrap:hover {
   background: #f5f5f5;
   cursor: pointer;
 }
 
 .utils {
-  /* visibility: hidden; */
+  visibility: hidden;
   height: 100%;
   display: flex;
   align-items: center;
   position: absolute;
-  right: 0;
+  right: 10px;
+  top: 0;
 }
 
-.user-detail:hover .utils {
+.user-detail-wrap:hover .utils {
   visibility: visible;
+}
+
+.util-icon-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.util-icon-right>div {
+  width: 24px;
+  height: 24px;
 }
 
 .util-icon-right>svg {
@@ -84,6 +125,7 @@
 
 .user--profile-img {
   position: relative;
+  margin-right: 20px;
 }
 
 .utils-check {
@@ -110,6 +152,14 @@
   fill: rebeccapurple;
 }
 
-svg:hover {
-  fill: red;
+@media screen and (max-width: 1000px) {
+  .contacts {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .user-email {
+    display: none;
+  }
 }

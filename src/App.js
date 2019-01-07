@@ -23,7 +23,7 @@ class App extends Component {
     viewContactId: ''
   }
 
-  displayModal = (showModal: false, modalToShow: '') => {
+  displayModal = (showModal = false, modalToShow = '') => {
     this.setState({showModal, modalToShow});
   }
 
@@ -61,11 +61,6 @@ class App extends Component {
     this.setState({viewContactId: contactId});
   }
 
-  favContact = (contactId) => {
-    console.log(contactId);
-  }
-  
-  
   render() {
     const showModalOverlayToggle = this.state.showModal === true ? 'overlay overlay-active' : 'overlay'
     const notificationToggle = this.state.renderNotification === true ? 'notification notification-active' : 'notification'
@@ -82,7 +77,7 @@ class App extends Component {
           <CreateContactButton clicked={displayModal}/>
           </section>
           <section className='modals'>
-            <div className={showModalOverlayToggle}>
+            <div className={showModalOverlayToggle} >
               <div className='modalWrap'>
               { this.state.showModal && renderModal() }
               </div>

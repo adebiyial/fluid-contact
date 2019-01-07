@@ -1,6 +1,4 @@
 import React from 'react';
-
-import me from '../assets/icons/me.jpg';
 import '../styles/NavBar.css';
 
 const NavBar = () => {

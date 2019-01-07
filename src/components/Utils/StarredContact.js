@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
-class Contact extends Component {
-
-  state = {
-    existingInitials: []
-  }
+class StarredContact extends Component {
 
   handleClick = () => {
     this.props.clicked(true, 'view-contact-modal');
@@ -12,6 +8,7 @@ class Contact extends Component {
   }
 
   handleStarContact = () => {
+    console.log('favourite', this.props.contactId);
     this.props.starContact(this.props.contactId);
   }
 
@@ -25,12 +22,14 @@ class Contact extends Component {
 
 
   render() {
-    const { firstName, lastName, email, phone, contactId, contactInitial } = this.props;
-    const imgSrc = `https://robohash.org/${contactId}`;
+    const { firstName, lastName, email, phone } = this.props;
+    const imgSrc = `https://robohash.org/${phone}`
     return (
-      <li data-contact-initial={ contactInitial }>
+      <li>
         <div className="icon">
-          <h3 className="contactInitial">{ contactInitial }</h3>
+          <svg focusable="false" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" >
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
         </div>
         <div className="user-detail-wrap">
           <div className="user-detail" role='button' onClick={this.handleClick}>
@@ -92,4 +91,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default StarredContact;

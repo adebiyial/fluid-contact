@@ -7,8 +7,8 @@ const SideDrawer = ( ) => {
     <ContactsConsumer>
         {
           value => {
-            const { allContacts } = value;
-            console.log(allContacts);
+            const allContacts = JSON.parse(localStorage.getItem('allContacts')) || [];
+            const noOfContacts = allContacts.length <= 0 ? '' : `${allContacts.length}`
             return (
               <div className="side--drawer">
                 <ul className="side--drawer-items">
@@ -20,7 +20,7 @@ const SideDrawer = ( ) => {
                         />
                       </svg>
                     </div>
-                    <p>contacts ( 45 )</p>
+                    <p>contacts ({noOfContacts})</p>
                   </li>
                   <li>
                     <div className="side--drawer-icon-wrap">

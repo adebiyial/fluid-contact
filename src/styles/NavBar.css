@@ -3,7 +3,7 @@
   padding: 8px 20px;
   justify-content: space-between;
   color: white;
-  background: var(--fluid-nav-purple, red);
+  background: var(--fluid-nav-purple, rebeccapurple);
   align-items: center;
   position: fixed;
   width: 100%;

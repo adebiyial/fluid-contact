@@ -24,6 +24,8 @@
   display: flex;
   padding: 25px;
   border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .modal-user-small-img {
@@ -91,10 +93,20 @@ input::first-letter {
   text-transform: uppercase;
 }
 
+.util-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+.util-icons>div {
+  width: 24px;
+  height: 24px;
+}
+
 .modal-icon {
   width: 24px;
   height: 24px;
-  background: #000;
 }
 
 .modal-footer {
