@@ -3,6 +3,7 @@ import { ContactsConsumer } from '../../contexts/ContactContext';
 import email from '../../assets/icons/email.svg';
 import phone from '../../assets/icons/phone.svg';
 import company from '../../assets/icons/company.svg';
+import person from '../../assets/icons/person.svg';
 
 class CreateNewContactModal extends Component {
 
@@ -28,7 +29,6 @@ class CreateNewContactModal extends Component {
     }
 
     allContacts.push(newContact);
-    console.log(allContacts);
     // add contacts to local storage
     localStorage.setItem('allContacts', JSON.stringify(allContacts));
 
@@ -75,9 +75,9 @@ class CreateNewContactModal extends Component {
                 <form onSubmit={(e) => this.handleSubmit(e, value)}>
                   <label htmlFor="name" className="name">
                     <div className="modal-icon">
-                      <img src={email} alt="person icon"/>
+                      <img src={person} alt="person icon"/>
                     </div>
-                    <input type="text" name="firstName" placeholder="first name" onChange={this.handleChange} />
+                    <input autoFocus type="text" name="firstName" placeholder="first name" onChange={this.handleChange} />
                     <input type="text" name="lastName" placeholder="last name" onChange={this.handleChange} />
                   </label>
                   <label htmlFor="job" className="job">

@@ -99,6 +99,11 @@ input::first-letter {
   grid-gap: 15px;
 }
 
+.util-icons>div {
+  width: 24px;
+  height: 24px;
+}
+
 .modal-icon {
   width: 24px;
   height: 24px;

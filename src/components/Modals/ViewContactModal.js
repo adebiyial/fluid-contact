@@ -23,7 +23,7 @@ class ViewContactModal extends Component {
             const { allContacts } = value;
             const contactId = this.props.contactId;
             const currentContact = allContacts.find(contact => contact.contactId === contactId);
-            const imgSrc = `https://robohash.org/${currentContact.phone}`
+            const imgSrc = `https://robohash.org/${currentContact.contactId}`
             const mailHref = `mailto:${currentContact.email}`;
             const phoneHref = `tel:${currentContact.phone}`;
             return (
@@ -87,9 +87,6 @@ class ViewContactModal extends Component {
                       </li>
                     }
                   </ul>
-                  {/* <footer className="modal-footer">
-                    <button className='cancel' type="button" onClick={this.handleClick}>cancel</button>
-                  </footer> */}
                 </section>
               </div>
             )

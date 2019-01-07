@@ -27,10 +27,15 @@ main {
   display: flex;
   min-height: 100vh;
   padding-top: 66px;
+  background: white;
 }
 
 a {
   color: #2962ff;
   text-decoration: none;
   font-size: 14px;
+}
+
+img[type=button] {
+  -webkit-appearance: none;
 }

@@ -7,7 +7,8 @@ import '../styles/ContactList.css'
 class ContactList extends Component {
   state = {
     starredContacts: [],
-    allContacts: []
+    allContacts: [],
+    existingInitials: []
   }
 
   componentWillMount() {
@@ -38,8 +39,20 @@ class ContactList extends Component {
     // DONT;T ALLOW DUPLICATES
   }
 
+  sortAllContacts = (allContacts) => {
+    const allContactsSorted = allContacts.sort(this.sortContactsComparisonFx);
+    return allContactsSorted;
+  }
+
+  sortContactsComparisonFx = (a, b) => {
+    a = a.firstName.toUpperCase();
+    b = b.firstName.toUpperCase();
+    return a > b ? 1 : b > a ? -1 : 0;
+  }
+
   render() {
-    const { starContact } = this;
+    const { starContact, sortAllContacts } = this;
+    let existingInitials = [];
 
      return (
       <ContactsConsumer>
@@ -48,18 +61,28 @@ class ContactList extends Component {
             const { allContacts, starredContacts  } = value;
             const noOfStarredContacts = starredContacts.length > 0 ? `${starredContacts.length}` : `0`;
             const noOfContacts = allContacts.length > 0 ? `${allContacts.length}` : `0`;
-
+            
             return (
-              <div className="contacts">
+                parseInt(noOfContacts) <= 0 ?
+                <div className='emptyContact'>
+                <img src="//robohash.org/JI1.png?set=set2&size=150x150" alt="user profile img" />
+                  <h1 className='emptyContactMsg'>
+                  You do not have any contact yet. Click the <span className="addBtn">
+                  add button + </span> to get started </h1>
+                </div> : 
+                <div className="contacts">
                 <div className="starred--contacts">
-                  <header>
+                  {
+                    Number(noOfStarredContacts) >= 0 &&
+                    <header>
                     <h3 className="contact--heading">starred contacts ({ noOfStarredContacts })</h3>
                   </header>
+                  }
                   <ul className="starred--contacts--list">
                     {
                       starredContacts.map(contact => {
                         return (
-                          <StarredContact key={contact.phone} firstName={contact.firstName}
+                          <StarredContact key={contact.contactId} firstName={contact.firstName}
                           lastName={contact.lastName} company="Google"
                           jobTitle="Head of VR" email={contact.email}
                           phone={contact.phone} notes="find him" clicked={this.props.clicked}
@@ -77,14 +100,18 @@ class ContactList extends Component {
                   </header>
                   <ul className="contacts--list">
                     {
-                      allContacts.map(contact => {
+                      sortAllContacts(allContacts).map(contact => {
+                        let contactInitial = contact.firstName[0].toUpperCase();
+                        contactInitial = existingInitials.includes(contactInitial) === true ? '' : contactInitial;
+                        existingInitials.push(contactInitial);
+
                         return (
-                          <Contact key={contact.phone} firstName={contact.firstName}
+                          <Contact key={contact.contactId} firstName={contact.firstName}
                           lastName={contact.lastName} company="Google"
                           jobTitle="Head of VR" email={contact.email}
                           phone={contact.phone} notes="find him" clicked={this.props.clicked}
                           viewContact={this.props.viewContact} contactId={contact.contactId}
-                          starContact={starContact}
+                          starContact={starContact} contactInitial={ contactInitial }
                           />
                         )
                       })

@@ -82,7 +82,7 @@ class App extends Component {
           <CreateContactButton clicked={displayModal}/>
           </section>
           <section className='modals'>
-            <div className={showModalOverlayToggle}>
+            <div className={showModalOverlayToggle} >
               <div className='modalWrap'>
               { this.state.showModal && renderModal() }
               </div>

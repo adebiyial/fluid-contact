@@ -1,9 +1,30 @@
-.contacts {
+.contacts, .emptyContact {
   width: 100%;
   padding: 20px;
   padding-left: 300px;
   transition: 0.2s;
   padding-top: 30px;
+}
+
+.emptyContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.emptyContact .addBtn {
+  background: #e91e63;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.emptyContactMsg {
+  max-width: 50%;
+  line-height: 1.9;
 }
 
 .contacts header {
@@ -31,8 +52,9 @@
 
 .contacts li {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 15px 1fr;
   grid-column-gap: 10px;
+  align-content: center;
 }
 
 .icon {
@@ -92,6 +114,11 @@
   grid-gap: 15px;
 }
 
+.util-icon-right>div {
+  width: 24px;
+  height: 24px;
+}
+
 .util-icon-right>svg {
   margin: 0 5px;
 }
@@ -123,10 +150,6 @@
 
 .utils-check:hover svg {
   fill: rebeccapurple;
-}
-
-svg:hover {
-  fill: red;
 }
 
 @media screen and (max-width: 1000px) {
